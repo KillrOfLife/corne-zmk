@@ -73,26 +73,32 @@
 };
 
 &pro_micro_i2c {
-  status = "okay";
+        status = "disabled";
+};
 
- oled: ssd1306@3c {
-    compatible = "solomon,ssd1306fb";
-    reg = <0x3c>;
-    width = <128>;
-    height = <32>;
-    segment-offset = <0>;
-    page-offset = <0>;
-    display-offset = <0>;
-    multiplex-ratio = <31>;
-    com-invdir;
-    segment-remap;
-    com-sequential;
-    prechargep = <0x22>;
-  };
+/* SPI-based OLED for nice!nano (placeholder phandles/pins — update to match your board/shield) */
+&spi1 {
+        status = "okay";
 
-  // Layer status widget for OLED display
-  status-widgets {
-    compatible = "zmk,status-widgets";
-  };
+        oled: ssd1306@0 {
+                compatible = "solomon,ssd1306fb";
+                reg = <0>; /* chip-select index */
+                spi-max-frequency = <8000000>;
+                /* Replace the gpio phandles (e.g. &gpio0 15 0) with your board's actual pins */
+                dc-gpios = <&gpio0 15 0>;
+                reset-gpios = <&gpio0 16 0>;
+                cs-gpios = <&gpio0 14 0>;
+                width = <128>;
+                height = <32>;
+                multiplex-ratio = <31>;
+                com-invdir;
+                segment-remap;
+                com-sequential;
+                prechargep = <0x22>;
+        };
 
+        // Layer status widget for OLED display
+        status-widgets {
+                compatible = "zmk,status-widgets";
+        };
 };
