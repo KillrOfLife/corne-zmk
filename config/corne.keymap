@@ -80,7 +80,7 @@
 &spi1 {
         status = "okay";
 
-        oled: ssd1306@0 {
+        oled_spi: ssd1306@0 {
                 compatible = "solomon,ssd1306fb";
                 reg = <0>; /* chip-select index */
                 spi-max-frequency = <8000000>;
