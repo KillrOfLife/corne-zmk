@@ -85,7 +85,7 @@
                 reg = <0>; /* chip-select index */
                 spi-max-frequency = <8000000>;
                 /* Replace the gpio phandles (e.g. &gpio0 15 0) with your board's actual pins */
-                dc-gpios = <&gpio0 15 0>;
+                data_cmd-gpios = <&gpio0 15 0>;
                 reset-gpios = <&gpio0 16 0>;
                 cs-gpios = <&gpio0 14 0>;
                 width = <128>;
