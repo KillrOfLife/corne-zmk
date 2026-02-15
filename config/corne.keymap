@@ -26,14 +26,6 @@
                 };
         };
 
-        layer-names {
-                compatible = "zmk,layer-names";
-                label = "LAYER_NAMES";
-                map = <0 "DEFAULT"
-                       1 "LOWER"
-                       2 "RAISE">;
-        };
-
         keymap {
                 compatible = "zmk,keymap";
 
