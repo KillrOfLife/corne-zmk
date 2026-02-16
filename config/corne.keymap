@@ -9,7 +9,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <layouts/foostan/corne/5column.dtsi>
 #include <dt-bindings/gpio/gpio.h>
-#include <dt-bindings/pinctrl/pinctrl-gpio.h>
 
 / {
         keymap {
