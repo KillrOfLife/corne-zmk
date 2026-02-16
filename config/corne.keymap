@@ -84,8 +84,8 @@
 
 &spi0 {
         status = "okay";
-        pinctrl-0 = < &spi0_default2 >;
-        pinctrl-1 = < &spi0_sleep2 >;
+        pinctrl-0 = < &spi0_default >;
+        pinctrl-1 = < &spi0_sleep >;
         pinctrl-names = "default", "sleep";
         /* P0.06 = &gpio0 6 */
         cs-gpios = < &gpio0 6 GPIO_ACTIVE_HIGH >;
