@@ -14,7 +14,7 @@
         chosen {
                 zmk,display = &nice_view;
         };
-        
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -88,7 +88,7 @@
         pinctrl-1 = < &spi0_sleep2 >;
         pinctrl-names = "default", "sleep";
         /* P0.06 = &gpio0 6 */
-        cs-gpios = < &gpio0 6 GPIO_ACTIVE_LOW >;
+        cs-gpios = < &gpio0 6 GPIO_ACTIVE_HIGH >;
          /* nice!view display definition */
         nice_view: ls0xx@0 {
                 compatible = "sharp,ls0xx";
