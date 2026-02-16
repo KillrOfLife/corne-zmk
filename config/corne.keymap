@@ -73,13 +73,6 @@
 
         };
 
-        &spi0 {
-                pinctrl-0 = <&spi0_default>;
-                pinctrl-1 = <&spi0_sleep>;
-                status = "okay";
-                cs-gpios = <&gpio0 6 0>;
-
-        };
 
 
 };
