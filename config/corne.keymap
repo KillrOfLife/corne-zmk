@@ -56,22 +56,45 @@
         };
 };
 
-&pro_micro_i2c {
-        status = "disabled";
+/ {
+        pinctrl {
+                spi0_local_default: spi0_local_default {
+                        group1 {
+                                psels = <0x40014 0x50011 0x60019>;
+                        };
+                };
 
- oled: ssd1306@3c {
-    compatible = "solomon,ssd1306fb";
-    reg = <0x3c>;
-    width = <128>;
-    height = <32>;
-    segment-offset = <0>;
-    page-offset = <0>;
-    display-offset = <0>;
-    multiplex-ratio = <31>;
-    com-invdir;
-    segment-remap;
-    com-sequential;
-    prechargep = <0x22>;
-  };
+                spi0_local_sleep: spi0_local_sleep {
+                        group1 {
+                                psels = <0x40014 0x50011 0x60019>;
+                                low-power-enable;
+                        };
+                };
 
-  };
+                uart0_local_default: uart0_local_default {
+                        group1 {
+                                psels = <0x10008 0x6>;
+                        };
+                };
+
+                uart0_local_sleep: uart0_local_sleep {
+                        group1 {
+                                psels = <0x10008 0x6>;
+                                low-power-enable;
+                        };
+                };
+        };
+
+        &spi0 {
+                pinctrl-0 = <&spi0_local_default>;
+                pinctrl-1 = <&spi0_local_sleep>;
+                status = "okay";
+                cs-gpios = <&gpio0 6 0>;
+        };
+
+        &uart0 {
+                pinctrl-0 = <&uart0_local_default>;
+                pinctrl-1 = <&uart0_local_sleep>;
+                status = "okay";
+        };
+};
