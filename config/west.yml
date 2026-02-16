@@ -11,5 +11,8 @@ manifest:
       remote: zmkfirmware
       revision: v0.3
       import: app/west.yml
+    - name: mario-peripheral-animation
+      remote: gpeye
+      revision: main 
   self:
     path: config
