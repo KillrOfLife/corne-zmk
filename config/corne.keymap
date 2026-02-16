@@ -54,9 +54,7 @@
                         >;
                 };
         };
-};
 
-/ {
         pinctrl {
                 spi0_local_default: spi0_local_default {
                         group1 {
