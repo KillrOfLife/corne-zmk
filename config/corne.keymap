@@ -10,7 +10,6 @@
 #include <layouts/foostan/corne/5column.dtsi>
 #include <dt-bindings/gpio/gpio.h>
 
-#include "oled.dtsi"
 
 / {
         chosen {
