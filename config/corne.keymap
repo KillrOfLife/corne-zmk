@@ -101,3 +101,5 @@
                 height = <68>;
         };
 };
+
+nice_view_spi: &spi0 {};
